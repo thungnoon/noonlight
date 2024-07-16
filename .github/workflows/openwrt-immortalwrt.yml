@@ -141,12 +141,10 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages && mkdir packages
-        find -name "*esxi-flat.vmdk*" | xargs -i mv -f {} packages
         find -name "*kernel.bin*" | xargs -i mv -f {} packages
         find -name "*rootfs*" | xargs -i mv -f {} packages
         find -name "*.manifest*" | xargs -i mv -f {} packages
         find -name "*vmlinuz*" | xargs -i mv -f {} packages
-        find -name "*esxi.vmdk*" | xargs -i mv -f {} packages
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
@@ -165,7 +163,7 @@ jobs:
           echo "release_tag=$(date +"%Y.%m.%d")-Lean" >> $GITHUB_OUTPUT
           echo "release_date=$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
           touch release.txt
-          echo "后台地址：192.168.5.1 用户名：root 密码：password" >> release.txt
+          echo "后台地址：192.168.5.1" >> release.txt
           echo "status=success" >> $GITHUB_OUTPUT
           
     - name: Upload firmware to release
@@ -178,6 +176,8 @@ jobs:
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
+      permissions:
+          contents:write
 
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2
