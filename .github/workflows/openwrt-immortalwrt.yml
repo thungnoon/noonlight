@@ -167,8 +167,6 @@ jobs:
           echo "status=success" >> $GITHUB_OUTPUT
           
     - name: Upload firmware to release
-      permissions:
-        contents:write
       uses: softprops/action-gh-release@master
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
