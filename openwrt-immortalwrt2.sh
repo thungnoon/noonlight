@@ -17,10 +17,10 @@
 # sed -i 's/192.168.5.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
-rm -rf ./package/diy-ziyong/theme
-rm -rf ./package/diy-ziyong/luci-app-wrtbwmon-zh
-rm -rf ./package/diy-ziyong/wrtbwmon
-# rm -rf ./package/diy-ziyong/adguardhome
+rm -rf ./package/zy/theme
+rm -rf ./package/zy/luci-app-wrtbwmon-zh
+rm -rf ./package/zy/wrtbwmon
+# rm -rf ./package/zy/adguardhome
 rm -rf ./feeds/packages/net/adguardhome
 rm -rf ./feeds/packages/net/smartdns
 rm -rf ./feeds/packages/net/mosdns
