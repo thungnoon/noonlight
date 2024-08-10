@@ -40,6 +40,7 @@ git clone https://github.com/thungnoon/zy.git package/zy
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 git clone https://github.com/linkease/istore.git package/istore
+git clone https://github.com/kenzok8/small-package/luci-app-control-weburl.git package/luci-app-control-weburl
 git clone https://github.com/linkease/istore-ui.git package/istore-ui
 git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
