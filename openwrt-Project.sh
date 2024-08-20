@@ -50,6 +50,7 @@ git clone https://github.com/sirpdboy/luci-app-poweroffdevice package/luci-app-p
 merge_package https://github.com/messense/aliyundrive-webdav aliyundrive-webdav/openwrt applications/aliyundrive-webdav
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
 git clone https://github.com/sirpdboy/luci-app-lucky.git package/lucky
+git clone https://github.com/morytyann/OpenWrt-mihomo.git package/luci-app-mihomo
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
