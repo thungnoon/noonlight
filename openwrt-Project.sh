@@ -46,6 +46,7 @@ git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-a
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone https://github.com/immortalwrt/homeproxy.git package/luci-app-homeproxy
 git clone https://github.com/sirpdboy/luci-app-poweroffdevice package/luci-app-poweroffdevice
+git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom-ng
 # git clone https://github.com/v2rayA/v2raya-openwrt.git package/v2raya-openwrt
 merge_package https://github.com/messense/aliyundrive-webdav aliyundrive-webdav/openwrt applications/aliyundrive-webdav
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
@@ -60,4 +61,4 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # svn co https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/adguardhome
 merge_package master https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
 merge_package master https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
-echo 'src-git infinityfreedom https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git' >>feeds.conf.default
+ 
