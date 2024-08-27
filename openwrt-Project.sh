@@ -60,3 +60,4 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # svn co https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/adguardhome
 merge_package master https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-wrtbwmon
 merge_package master https://github.com/kiddin9/openwrt-packages openwrt-packages/wrtbwmon
+echo 'src-git infinityfreedom https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git' >>feeds.conf.default
