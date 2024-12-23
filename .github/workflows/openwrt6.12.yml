@@ -168,7 +168,7 @@ jobs:
       with:
         name: OpenWrt_6.12D${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
-  
+    
     - name: 发布至release
       id: release
       uses: ncipollo/release-action@v1
@@ -181,22 +181,21 @@ jobs:
         token: ${{ secrets.RELEASE_TOKEN }}
         body: |
           默认IP:192.168.5.1
-          用户名:root
-          默认密码:password
+          用户名:root 密码:password
         artifacts: ${{ env.FIRMWARE }}/*
 
     - name: 清理旧的workflow
       uses: Mattraks/delete-workflow-runs@v2
       with:
         token: ${{ secrets.RELEASE_TOKEN }}
-        retain_days: 30
-        keep_minimum_runs: 10
+        retain_days: 10
+        keep_minimum_runs: 5
 
     - name: 删除旧的Releases
       uses: dev-drprasad/delete-older-releases@v0.3.2
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        keep_latest: 8
+        keep_latest: 5
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
