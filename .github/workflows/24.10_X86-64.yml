@@ -112,7 +112,7 @@ jobs:
         make clean
 
     - name: 上传固件到发布
-      uses: softprops/action-gh-release@v1
+      uses: ncipollo/release-action@v1
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
