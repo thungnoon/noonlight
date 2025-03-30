@@ -1,13 +1,3 @@
-#
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
-#
-# https://github.com/P3TERX/Actions-OpenWrt
-# Description: Build OpenWrt using GitHub Actions
-#
-
 name: 24.10_X86-64
 
 permissions: write-all
@@ -101,9 +91,18 @@ jobs:
       if: steps.compile.outputs.status == 'success'
       run: |
         cd openwrt/bin/targets/*/*
-        rm -rf *.bin *.buildinfo *.json *.manifest packages
+        # 只删除非固件文件，保留 .img 或 .gz 等固件
+        rm -rf *.buildinfo *.json *.manifest packages
+        ls -la  # 检查剩余文件
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
+
+    - name: 生成发布标签
+      id: tag
+      if: steps.compile.outputs.status == 'success'
+      run: |
+        TAG_NAME=$(date +'%Y.%m.%d-24.10_X86-64')
+        echo "RELEASE_TAG=$TAG_NAME" >> $GITHUB_ENV
 
     - name: 清理临时文件
       if: steps.compile.outputs.status == 'success'
@@ -117,7 +116,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: "$(date +'%Y.%m.%d-24.10_X86-64')"
+        tag_name: ${{ env.RELEASE_TAG }}
         body: "✅ 24.10 源码 X86-64 平台"
         files: ${{ env.FIRMWARE }}/*
 
