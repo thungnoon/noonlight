@@ -40,6 +40,8 @@ git clone -b main --depth 1 https://github.com/linkease/istore.git
 git clone -b main --depth 1 https://github.com/linkease/istore-ui.git
 # #nikki 
 git clone -b main --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git
+# #luci-theme-infinityfreedom
+src-git infinityfreedomng https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git
 popd
 
 echo "packages executed successfully!"
