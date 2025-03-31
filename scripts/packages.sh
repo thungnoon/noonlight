@@ -41,7 +41,7 @@ git clone -b main --depth 1 https://github.com/linkease/istore-ui.git
 # #nikki 
 git clone -b main --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git
 # #luci-theme-infinityfreedom
-echo "src-git infinityfreedomng https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git;main" >> "feeds.conf.default"
+echo "src-git infinityfreedomng https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git;master" >> "feeds.conf.default"
 popd
 
 echo "packages executed successfully!"
