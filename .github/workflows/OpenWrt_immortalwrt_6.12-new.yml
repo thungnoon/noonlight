@@ -26,7 +26,7 @@ env:
 
 jobs:
   Build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Maximize build space
@@ -80,6 +80,7 @@ jobs:
     - name: Install Feeds
       run: |
         cd $OPENWRTROOT
+        ./scripts/feeds update -a
         ./scripts/feeds install -a
 
     - name: Download the installation package
