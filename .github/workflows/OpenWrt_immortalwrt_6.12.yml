@@ -93,7 +93,6 @@ jobs:
         
     - name: Install Feeds
       run: |
-        git clone https://git.openwrt.org/openwrt/openwrt.git
         cd $OPENWRTROOT
         ./scripts/feeds update -a
         ./scripts/feeds install -a
