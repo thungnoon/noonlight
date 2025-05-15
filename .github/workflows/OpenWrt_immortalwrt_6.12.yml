@@ -178,10 +178,10 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-          echo "release_tag=$(date +"%Y.%m.%d")-immortalwrt3" >> $GITHUB_OUTPUT
+          echo "release_tag=$(date +"%Y.%m.%d")-immortalwrt" >> $GITHUB_OUTPUT
           echo "release_date=$(date "+%Y年%m月%d日")" >> $GITHUB_OUTPUT
           touch release.txt
-          echo -e "**📥固件说明**: \n" >> release.txt
+          echo -e "**固件说明**: \n" >> release.txt
           echo -e "#### 后台地址: \`192.168.5.1\`\n" >> release.txt
           echo -e "#### 后台密码: \`password\`\n" >> release.txt
           echo "status=success" >> $GITHUB_OUTPUT
